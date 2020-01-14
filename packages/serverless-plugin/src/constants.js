@@ -14,3 +14,5 @@ export const INCLUDES = [
   'node_modules/@serverless-chrome/lambda/dist/bundle.cjs.js',
   'node_modules/@serverless-chrome/lambda/dist/headless-chromium',
 ]
+
+export const PLUGIN_NAME = '@onereach/serverless-plugin-chrome'

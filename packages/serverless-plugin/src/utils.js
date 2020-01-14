@@ -1,5 +1,9 @@
 import * as path from 'path'
-import { SUPPORTED_PROVIDERS, SUPPORTED_RUNTIMES } from './constants'
+import {
+  SUPPORTED_PROVIDERS,
+  SUPPORTED_RUNTIMES,
+  PLUGIN_NAME,
+} from './constants'
 
 export function throwIfUnsupportedProvider (provider) {
   if (!SUPPORTED_PROVIDERS.includes(provider)) {
@@ -19,7 +23,7 @@ export function throwIfWrongPluginOrder (plugins) {
   const comesBefore = ['serverless-plugin-typescript']
   const comesAfter = ['serverless-webpack']
 
-  const ourIndex = plugins.indexOf('serverless-plugin-chrome')
+  const ourIndex = plugins.indexOf(PLUGIN_NAME)
 
   plugins.forEach((plugin, index) => {
     if (comesBefore.includes(plugin) && ourIndex < index) {
